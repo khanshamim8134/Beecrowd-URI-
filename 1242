@@ -1,0 +1,81 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long int ll;
+typedef unsigned long long int llu;
+typedef double dl;
+
+#define endl '\n'
+#define PI acos(-1)
+#define vi vector<int>
+#define vll vector<ll>
+#define vii vector<pair<int,int>>
+
+
+int main()
+{
+    string s,str1="BS",str2="SB",str3="CF",str4="FC";
+    while(cin>>s)
+    {
+        ll cnt=0,position=-1,p2=-1,p3=-1,p4=-1,c1=0,c2=0,c3=0,c4=0;
+        while(1)
+        {
+            position = s.find(str1);
+            if(position != string::npos)
+            {
+                s.erase(position,str1.size());
+                cnt++;
+            }
+            else
+            {
+                c1=1;
+            }
+            p2 = s.find(str2);
+            if(p2 != string::npos)
+            {
+                s.erase(p2,str2.size());
+                cnt++;
+            }
+            else
+            {
+                c2=1;
+            }
+            p3 = s.find(str3);
+            if(p3 != string::npos)
+            {
+                s.erase(p3,str3.size());
+                cnt++;
+            }
+            else
+            {
+                c3=1;
+            }
+            p4 = s.find(str4);
+            if(p4 != string::npos)
+            {
+                s.erase(p4,str4.size());
+                cnt++;
+            }
+            else
+            {
+                c4=1;
+            }
+            if(c1==1&&c2==1&&c3==1&&c4==1)
+            {
+                break;
+            }
+            else
+            {
+                c1=0;
+                c2=0;
+                c3=0;
+                c4=0;
+            }
+
+        }
+        cout<<cnt<<endl;
+    }
+
+    return 0;
+}
